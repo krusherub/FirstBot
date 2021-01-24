@@ -1,0 +1,23 @@
+﻿<Window x:Class="FirstBot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstBot"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="497.128" Width="882.095">
+    <Grid>
+        <Button x:Name="btnAction" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Margin="442,408,0,0" Click="btnAction_Click" Height="32"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="59" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="600" Margin="221,323,0,0"/>
+        <ListBox x:Name="usersList" HorizontalAlignment="Left" Height="430" Margin="10,10,0,0" VerticalAlignment="Top" Width="190" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox HorizontalAlignment="Left" ItemsSource="{Binding ElementName=usersList, Path=SelectedItem.Messages}" Height="266" Margin="221,32,0,0" VerticalAlignment="Top" Width="600"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,2 @@
+# FirstBot
+ Useless bot
